@@ -43,7 +43,7 @@ def extract_info_from_file(file_path):
                 "projet": clean_newlines(next((attr["Value"][0] for attr in attributes if attr["name"] == "project"), "")),
                 "ads": clean_newlines(value_data.get("ads", {}).get("name", "")),
                 "libelle": clean_newlines(value_data.get("label", "")),
-                "IND": clean_newlines(value_data.get("ind", {}).get("name", "")),
+                "IND": clean_newlines(value_data.get("ind", {}).get("identifier", "")),
                 "BIB_Correction": next((int(attr["Value"][0]) for attr in attributes if attr["name"] == "BIB_Correction"), ""),
                 "BIB_Confidentiality": clean_newlines(next((attr["Value"][0] for attr in attributes if attr["name"] == "BIB_Confidentiality"), ""))
             }
